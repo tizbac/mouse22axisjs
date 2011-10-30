@@ -48,7 +48,7 @@ MousePosition::MousePosition( QObject *parent) : QObject(parent)
     short original_rate          = XRRConfigCurrentRate(conf);
     SizeID original_size_id       = XRRConfigCurrentConfiguration(conf, &original_rotation);
     m_size.setX(xrrs[original_size_id].width);
-    m_size.setY(xrrs[original_size_id].width);
+    m_size.setY(xrrs[original_size_id].height);
     mth = new MiceThread();
     mth->start();
     connect(mth,SIGNAL(buttonstateupdate(char)),SLOT(stateuinternal(char)));
